@@ -9,6 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["andrewnez@gmail.com"]
   s.homepage    = "https://github.com/andrew/split-export"
   s.summary     = %q{Split extension to export your data}
+  s.license     = 'MIT'
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
