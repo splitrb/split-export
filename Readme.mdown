@@ -28,7 +28,7 @@ and require it in your project:
 
     require 'split/export'
     csv_data = Split::Export.to_csv
-    File.open('path/to/my.csv, 'w') {|f| f.write(csv_data) }
+    File.open('path/to/my.csv', 'w') {|f| f.write(csv_data) }
 
 ## Development
 
