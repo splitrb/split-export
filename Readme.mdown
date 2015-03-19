@@ -1,4 +1,4 @@
-# Split::Export
+# [Split Export](http://libraries.io/rubygems/split-export)
 
 An extension to [Split](http://github.com/andrew/split) to allow for easy exporting of AB testing data.
 
