@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = Split::Export::VERSION
   s.authors     = ["Andrew Nesbitt"]
   s.email       = ["andrewnez@gmail.com"]
-  s.homepage    = "https://github.com/andrew/split-export"
+  s.homepage    = "https://github.com/splitrb/split-export"
   s.summary     = %q{Split extension to export your data}
   s.license     = 'MIT'
 

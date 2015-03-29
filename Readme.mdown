@@ -1,6 +1,6 @@
 # [Split Export](http://libraries.io/rubygems/split-export)
 
-An extension to [Split](http://github.com/andrew/split) to allow for easy exporting of AB testing data.
+An extension to [Split](http://github.com/splitrb/split) to allow for easy exporting of AB testing data.
 
 ## Requirements
 
@@ -32,8 +32,8 @@ and require it in your project:
 
 ## Development
 
-Source hosted at [GitHub](http://github.com/andrew/split-export).
-Report Issues/Feature requests on [GitHub Issues](http://github.com/andrew/split-export/issues).
+Source hosted at [GitHub](http://github.com/splitrb/split-export).
+Report Issues/Feature requests on [GitHub Issues](http://github.com/splitrb/split-export/issues).
 
 Tests can be ran with `rake spec`
 
