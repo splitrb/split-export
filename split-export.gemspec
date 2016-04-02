@@ -22,4 +22,5 @@ Gem::Specification.new do |s|
 
   # Development Dependencies
   s.add_development_dependency(%q<rspec>, ["~>  2.6"])
+  s.add_development_dependency "rake", "~> 11.1"
 end
