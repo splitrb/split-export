@@ -2,11 +2,6 @@ require 'split'
 require 'csv'
 require 'bigdecimal'
 
-if CSV.const_defined? :Reader
-  require 'fastercsv'
-  CSV = FasterCSV
-end
-
 module Split
   module Export
     extend self

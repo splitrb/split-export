@@ -11,13 +11,14 @@ Gem::Specification.new do |s|
   s.summary     = %q{Split extension to export your data}
   s.license     = 'MIT'
 
+  s.required_ruby_version = '>= 1.9.2'
+
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
 
   s.add_dependency(%q<split>, ["~>  0.3"])
-  s.add_dependency(%q<fastercsv>, ['>= 1.2.0'])
 
   # Development Dependencies
   s.add_development_dependency(%q<rspec>, ["~>  2.6"])
