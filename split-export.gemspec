@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Andrew Nesbitt"]
   s.email       = ["andrewnez@gmail.com"]
   s.homepage    = "https://github.com/splitrb/split-export"
-  s.summary     = %q{Split extension to export your data}
+  s.summary     = "Split extension to export your data"
   s.license     = 'MIT'
 
   s.required_ruby_version = '>= 1.9.2'
@@ -21,6 +21,6 @@ Gem::Specification.new do |s|
   s.add_dependency "split", "~> 1.4.0"
 
   # Development Dependencies
-  s.add_development_dependency(%q<rspec>, ["~>  2.6"])
+  s.add_development_dependency "rspec", "~>  2.6"
   s.add_development_dependency "rake", "~> 11.1"
 end
