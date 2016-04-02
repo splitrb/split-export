@@ -13,7 +13,7 @@ module Split
     def to_csv
       csv = CSV.generate do |csv|
         csv << ['Experiment', 'Alternative', 'Participants', 'Completed', 'Conversion Rate', 'Z score', 'Control', 'Winner']
-        Split::Experiment.all.each do |experiment|
+        Split::ExperimentCatalog.all.each do |experiment|
           experiment.alternatives.each do |alternative|
             csv << [experiment.name,
                     alternative.name,
