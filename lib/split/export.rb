@@ -21,7 +21,7 @@ module Split
                     alternative.name,
                     alternative.participant_count,
                     goals.inject(0) { |sum, g| sum + alternative.completed_count(g) },
-                    round(goals.inject(0) { |sum, g| alternative.conversion_rate(g) }, 3),
+                    round(goals.inject(0) { |sum, g| sum + alternative.conversion_rate(g) }, 3),
                     round(alternative.z_score, 3),
                     alternative.control?,
                     alternative.to_s == experiment.winner.to_s]
