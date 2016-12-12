@@ -29,5 +29,30 @@ module Split
         end
       end
     end
+
+    def experiment_to_csv(experiment)
+      csv = CSV.generate do |csv|
+        csv << %w(Alternative Goal Participants Completed Conversion\ Rate Z\ Score Control Winner)
+
+        experiment = Split::ExperimentCatalog.find(experiment)
+
+        break if !experiment
+
+        goals = [nil] + experiment.goals # nil corresponds to conversions without any goals.
+
+        experiment.alternatives.each do |alternative|
+          goals.each do |goal|
+            csv << [alternative.name,
+                    goal,
+                    alternative.participant_count,
+                    alternative.completed_count(goal),
+                    alternative.conversion_rate(goal),
+                    alternative.z_score(goal),
+                    alternative.control?,
+                    alternative.to_s == experiment.winner.to_s]
+          end
+        end
+      end
+    end
   end
 end
