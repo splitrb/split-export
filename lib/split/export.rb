@@ -49,7 +49,7 @@ module Split
 
     def experiment_to_csv(experiment)
       csv = CSV.generate do |csv|
-        csv << %w(Alternative Goal Participants Completed Conversion\ Rate Z\ Score Control Winner)
+        csv << ["Alternative", "Goal", "Participants", "Completed", "Conversion Rate", "Z Score", "Control", "Winner"]
 
         experiment = Split::ExperimentCatalog.find(experiment)
 
