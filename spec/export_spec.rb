@@ -22,4 +22,8 @@ describe Split::Export do
   it "should generate a detailed csv of split data for a single table" do
     Split::Export.experiment_to_csv("link_color").should eql("Alternative,Goal,Participants,Completed,Conversion Rate,Z Score,Control,Winner\nblue,,50,0,0.0,0.0,true,false\nblue,control,50,20,0.4,0.0,true,false\nblue,goal,50,10,0.2,0.0,true,false\nred,,60,0,0.0,0.0,false,false\nred,control,60,10,0.167,-2.736,false,false\nred,goal,60,30,0.5,3.257,false,false\ngreen,,0,0,0.0,0.0,false,false\ngreen,control,0,0,0.0,0.0,false,false\ngreen,goal,0,0,0.0,0.0,false,false\n")
   end
+
+  it "should quietly return nil if a bad experiment name is passed in" do
+    Split::Export.experiment_to_csv("incorrect_name").should be_nil
+  end
 end
