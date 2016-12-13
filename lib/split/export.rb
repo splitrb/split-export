@@ -10,6 +10,23 @@ module Split
       BigDecimal.new(number.to_s).round(precision).to_f
     end
 
+    # this method calculates the z_score for an alternative including all goals. This behavior should
+    # be added to Alternative#z_score but until then, this method will do. I lifted most of the code from that method.
+    def z_score_all_goals(alternative) 
+      goals = alternative.goals + [nil]
+      control = alternative.experiment.control
+
+      return 'N/A' if control.name == alternative.name
+
+      p_a = goals.inject(0) { |sum, g| sum + alternative.conversion_rate(g) }
+      p_c = goals.inject(0) { |sum, g| sum + control.conversion_rate(g) }
+
+      n_a = alternative.participant_count
+      n_c = control.participant_count
+
+      z_score = Split::Zscore.calculate(p_a, n_a, p_c, n_c)
+    end
+
     def to_csv
       csv = CSV.generate do |csv|
         csv << ['Experiment', 'Alternative', 'Participants', 'Completed', 'Conversion Rate', 'Z score', 'Control', 'Winner']
@@ -22,7 +39,7 @@ module Split
                     alternative.participant_count,
                     goals.inject(0) { |sum, g| sum + alternative.completed_count(g) },
                     round(goals.inject(0) { |sum, g| sum + alternative.conversion_rate(g) }, 3),
-                    round(alternative.z_score, 3),
+                    round(z_score_all_goals(alternative), 3),
                     alternative.control?,
                     alternative.to_s == experiment.winner.to_s]
           end
@@ -46,8 +63,8 @@ module Split
                     goal,
                     alternative.participant_count,
                     alternative.completed_count(goal),
-                    alternative.conversion_rate(goal),
-                    alternative.z_score(goal),
+                    round(alternative.conversion_rate(goal), 3),
+                    round(alternative.z_score(goal), 3),
                     alternative.control?,
                     alternative.to_s == experiment.winner.to_s]
           end
