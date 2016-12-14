@@ -26,8 +26,16 @@ and require it in your project:
 
 ## Usage
 
+This exports data for all experiments. This data set does not break down conversions by goals:
+
     require 'split/export'
     csv_data = Split::Export.to_csv
+    File.open('path/to/my.csv', 'w') {|f| f.write(csv_data) }
+
+This exports data for a single experiment, and breaks it down by group and goal:
+
+    require 'split/export'
+    csv_data = Split::Export.experiment_to_csv("my_experiment")
     File.open('path/to/my.csv', 'w') {|f| f.write(csv_data) }
 
 ## Development
