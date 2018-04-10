@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
 
   # Development Dependencies
   s.add_development_dependency "rspec", "~>  2.6"
-  s.add_development_dependency "rake", "~> 11.1"
+  s.add_development_dependency "rake", "~> 12.3"
   s.add_development_dependency 'fakeredis', '~> 0.6.0'
 end
