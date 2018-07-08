@@ -38,12 +38,14 @@ This exports data for a single experiment, and breaks it down by group and goal:
     csv_data = Split::Export.experiment_to_csv("my_experiment")
     File.open('path/to/my.csv', 'w') {|f| f.write(csv_data) }
 
-## Development
+## Contribute
 
 Source hosted at [GitHub](http://github.com/splitrb/split-export).
 Report Issues/Feature requests on [GitHub Issues](http://github.com/splitrb/split-export/issues).
 
 Tests can be ran with `rake spec`
+
+Please conform to the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ### Note on Patches/Pull Requests
 
@@ -57,4 +59,4 @@ Tests can be ran with `rake spec`
 
 ## Copyright
 
-Copyright (c) 2013 Andrew Nesbitt. See LICENSE for details.
+Copyright (c) 2013-2018 Andrew Nesbitt. See LICENSE for details.
