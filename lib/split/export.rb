@@ -8,6 +8,8 @@ module Split
 
     def round(number, precision = 2)
       BigDecimal.new(number.to_s).round(precision).to_f
+    rescue ArgumentError
+      0.0
     end
 
     # this method calculates the z_score for an alternative including all goals. This behavior should
