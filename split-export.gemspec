@@ -8,7 +8,6 @@ Gem::Specification.new do |s|
   s.authors     = ["Andrew Nesbitt"]
   s.email       = ["andrewnez@gmail.com"]
   s.homepage    = "https://github.com/splitrb/split-export"
-  s.bug_tracker_uri    = "https://github.com/splitrb/split-export/issues"
   s.summary     = "Split extension to export your data"
   s.license     = 'MIT'
 
